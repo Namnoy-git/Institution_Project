@@ -1,13 +1,15 @@
 package com.it.institution_project.view.main.presentermain
 
 import android.util.Log
+import com.it.institution_project.model.body.BodyInsertAdmin
 import com.it.institution_project.model.body.BodyProfile
 import com.it.institution_project.model.body.BodyShowStatus
-import com.it.institution_project.model.response.ResponseLocation
-import com.it.institution_project.model.response.ResponseProfile
+import com.it.institution_project.model.response.*
 import com.it.institution_project.rest.DataModule
 import com.it.institution_project.ui.notifications.responsenoti.ResponseGetImageNoti
 import com.it.institution_project.ui.notifications.responsenoti.ResponseGetNoti
+import com.it.institution_project.view.login.bodylogin.BodyLogin
+import com.it.institution_project.view.login.responselogin.ResponseLogin
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.observers.DisposableObserver
@@ -44,6 +46,35 @@ class PresenterMain {
             })
 
     }
+
+    fun GetDataNotiAdminRx(
+
+        datarResponse:(ResponseGetNoti)->Unit,
+        MessageError:(String)->Unit
+    ){
+        mDisposable = DataModule.myAppService.dogetnotiAdmin()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeWith(object : DisposableObserver<ResponseGetNoti>(){
+
+                override fun onComplete() {
+
+                }
+
+                override fun onNext(response: ResponseGetNoti) {
+                    Log.d("messageget",response.toString())
+                    datarResponse.invoke(response)
+
+                }
+
+                override fun onError(e: Throwable) {
+                    Log.d("messageget",e.message)
+                    MessageError.invoke(e.message!!)
+                }
+            })
+
+    }
+
     fun SelectUser(
         userId: String,
         dataResponse: (ResponseProfile) -> Unit,
@@ -149,6 +180,88 @@ class PresenterMain {
                 }
 
                 override fun onError(e: Throwable) {
+                    MessageError.invoke(e.message!!)
+                }
+            })
+
+    }
+
+    fun InsertAdminRx(
+        name:String, district:String, locality:String, phone:String, username:String,password:String,
+        datarResponse:(ResponseInsertAdmin)->Unit,
+        MessageError:(String)->Unit
+    ){
+        mDisposable = DataModule.myAppService.doPostAdmin(BodyInsertAdmin(name,district,locality,phone,username,password))
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeWith(object : DisposableObserver<ResponseInsertAdmin>(){
+
+                override fun onComplete() {
+
+                }
+
+                override fun onNext(response: ResponseInsertAdmin) {
+                    Log.d("messageLogin",response.toString())
+                    datarResponse.invoke(response)
+
+                }
+
+                override fun onError(e: Throwable) {
+                    Log.d("messageLogin",e.message)
+                    MessageError.invoke(e.message!!)
+                }
+            })
+
+    }
+    fun GetDataTambon(
+
+        datarResponse: (ResponseGetTambon) -> Unit,
+        MessageError: (String) -> Unit
+    ) {
+        mDisposable = DataModule.myAppService.doGetTambon()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeWith(object : DisposableObserver<ResponseGetTambon>() {
+
+                override fun onComplete() {
+
+                }
+
+                override fun onNext(response: ResponseGetTambon) {
+                    Log.d("messageget", response.toString())
+                    datarResponse.invoke(response)
+
+                }
+
+                override fun onError(e: Throwable) {
+                    Log.d("messageget", e.message)
+                    MessageError.invoke(e.message!!)
+                }
+            })
+
+    }
+    fun GetDataAmphur(
+
+        datarResponse: (ResponseGetAmphur) -> Unit,
+        MessageError: (String) -> Unit
+    ) {
+        mDisposable = DataModule.myAppService.doGetAmphur()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeWith(object : DisposableObserver<ResponseGetAmphur>() {
+
+                override fun onComplete() {
+
+                }
+
+                override fun onNext(response: ResponseGetAmphur) {
+                    Log.d("messageget", response.toString())
+                    datarResponse.invoke(response)
+
+                }
+
+                override fun onError(e: Throwable) {
+                    Log.d("messageget", e.message)
                     MessageError.invoke(e.message!!)
                 }
             })

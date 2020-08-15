@@ -1,10 +1,10 @@
 package com.it.institution_project.rest
 
 
+import com.it.institution_project.model.body.BodyInsertAdmin
 import com.it.institution_project.model.body.BodyProfile
 import com.it.institution_project.model.body.BodyShowStatus
-import com.it.institution_project.model.response.ResponseLocation
-import com.it.institution_project.model.response.ResponseProfile
+import com.it.institution_project.model.response.*
 
 import com.it.institution_project.ui.notifications.bodynoti.BodyUpdateNoti
 import com.it.institution_project.ui.notifications.responsenoti.ResponseGetImageNoti
@@ -26,6 +26,12 @@ interface ServiceAPI {
     @POST("/notiimage")
     fun doget(@Body body: BodyShowStatus?): Observable<ResponseGetNoti>
 
+    @POST("/notiimageadmin")
+    fun dogetnotiAdmin(): Observable<ResponseGetNoti>
+
+    @POST("/Insertinsti")
+    fun doPostAdmin(@Body body: BodyInsertAdmin):Observable<ResponseInsertAdmin>
+
     @POST("/userprofile")
     fun doGetProfile(@Body body: BodyProfile?):Observable<ResponseProfile>
 
@@ -46,4 +52,12 @@ interface ServiceAPI {
 
     @GET("/getlocation")
     fun dogetlocation(): Observable<ResponseLocation>
+
+
+    @GET("/getamphur")
+    fun doGetAmphur(): Observable<ResponseGetAmphur>
+
+    @GET("/gettambon")
+    fun doGetTambon(): Observable<ResponseGetTambon>
+
 }

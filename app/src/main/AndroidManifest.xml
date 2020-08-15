@@ -10,14 +10,21 @@
 
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.main.PieChartActivity"></activity>
+        <activity android:name=".view.admin.ShowDataInstitution"></activity>
+        <activity android:name=".view.admin.ShowDataUser" />
+        <activity android:name=".view.admin.ShowDataNotiAdmin" />
+        <activity android:name=".view.admin.InsertInstitutionActivity" />
+        <activity android:name=".view.main.PieChartActivity" />
         <activity android:name=".view.main.ReportActivity" />
         <activity android:name=".view.admin.MainAdminActivity" />
+        <activity android:name=".view.admin.ManageUserActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/blue"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:background="#00B0FF"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btn_back_detallInsertAdmin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:background="#00FFFFFF"
+                android:src="@drawable/abc_vector_test"
+                android:tint="#F3EFEF" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:text="เพิ่มสิทธิ์หน่วยงาน"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
+
+
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/trans_white_rectangle"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="20dp"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/mitr"
+                android:textColor="@color/colorBlack"
+                android:text="ชื่อหน่วยงาน"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edt_Department"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:ems="10"
+                android:fontFamily="@font/mitr"
+                android:gravity="start|top"
+                android:hint="ระบุชื่อหน่วยงาน"
+                android:inputType="textMultiLine"
+                android:textSize="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="20dp"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/mitr"
+                android:textColor="@color/colorBlack"
+                android:text="อำเภอ"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spinner_Amphor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:fontFamily="@font/mitr"
+                android:gravity="center"
+                android:spinnerMode="dialog" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/mitr"
+                android:text="ตำบล"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spinner_tambon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:fontFamily="@font/mitr"
+                android:gravity="center"
+                android:spinnerMode="dialog" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="20dp"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/mitr"
+                android:textColor="@color/colorBlack"
+                android:text="เบอร์ติดต่อ"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edt_phone"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:ems="10"
+                android:fontFamily="@font/mitr"
+                android:gravity="start|top"
+                android:hint="ระบุเบอร์ติดต่อ"
+                android:inputType="number"
+                android:textSize="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="20dp"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/mitr"
+                android:textColor="@color/colorBlack"
+                android:text="ชื่อผู้ใช้งาน"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edt_user_name"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:ems="10"
+                android:fontFamily="@font/mitr"
+                android:gravity="start|top"
+                android:hint="ระบุชื่อผู้ใช้งาน"
+                android:inputType="textMultiLine"
+                android:textSize="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/mitr"
+                android:text="รหัสผ่าน"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edt_password"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:ems="10"
+                android:fontFamily="@font/mitr"
+                android:gravity="start|top"
+                android:hint="ระบุชื่อผู้ใช้งาน"
+                android:inputType="textMultiLine"
+                android:textSize="16dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/btnEditSaveAdmin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="50dp"
+                    android:fontFamily="@font/mitr"
+                    android:background="@drawable/login_button"
+                    android:text="บันทึก"
+                    android:textSize="18dp" />
+
+                <Button
+                    android:id="@+id/btnEditConfirmProfile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginBottom="50dp"
+                    android:fontFamily="@font/mitr"
+                    android:background="@drawable/cancle_button"
+                    android:text="ยกเลิก"
+                    android:textSize="18dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
+
