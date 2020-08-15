@@ -1,5 +1,6 @@
 package com.it.institution_project.view.admin
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.it.institution_project.R
@@ -10,6 +11,15 @@ class ManageUserActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_manage)
 
+        User_manage.setOnClickListener {
+            val i = Intent(this,ShowDataUser::class.java)
+            startActivity(i)
+        }
+
+        ins_manage.setOnClickListener {
+            val i = Intent(this,ShowDataInstitution::class.java)
+            startActivity(i)
+        }
 
         btn_back_ManageAdmin.setOnClickListener {
             finish()

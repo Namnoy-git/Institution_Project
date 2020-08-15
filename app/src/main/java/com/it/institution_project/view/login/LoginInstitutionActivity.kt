@@ -66,6 +66,8 @@ class LoginInstitutionActivity : AppCompatActivity() {
         mPreferrences.saveToken(responseLogin.message.token)
         mPreferrences.saveUserId(responseLogin.message.ins_id.toString())
 
+
+
         val mIntent = Intent(this,
             MainActivity::class.java)
 

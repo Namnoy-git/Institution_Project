@@ -41,6 +41,9 @@ interface ServiceAPI {
     @DELETE("/deletenoti/{id}")
     fun doDelete(@Path("id") id: Int): Observable<ResponseGetNoti>
 
+    @DELETE("/user/{id}")
+    fun doDeleteUser(@Path("id") id: Int): Observable<ResponseGetNoti>
+
     @POST("/usernoti")
     fun doGetNoti():Observable<ResponseGetNoti>
 
@@ -59,5 +62,16 @@ interface ServiceAPI {
 
     @GET("/gettambon")
     fun doGetTambon(): Observable<ResponseGetTambon>
+
+    @GET("/getuser")
+    fun doGetUser(): Observable<ResponseGetUser>
+
+    @GET("/getinsti")
+    fun doGetInstitution(): Observable<ResponseGetInstitution>
+
+    @DELETE("/insti/{id}")
+    fun doDeleteinsti(@Path("id") id: Int): Observable<ResponseGetInstitution>
+
+
 
 }

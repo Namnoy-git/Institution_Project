@@ -58,7 +58,7 @@
 
         <ImageView
 
-            android:id="@+id/Notification"
+            android:id="@+id/User_manage"
             android:layout_width="180dp"
             android:layout_height="174dp"
             android:layout_marginStart="10dp"
@@ -69,7 +69,7 @@
 
         <ImageView
 
-            android:id="@+id/User"
+            android:id="@+id/ins_manage"
             android:layout_width="180dp"
             android:layout_height="174dp"
             android:layout_marginStart="10dp"

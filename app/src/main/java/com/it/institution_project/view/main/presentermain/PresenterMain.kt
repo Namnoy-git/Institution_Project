@@ -8,12 +8,11 @@ import com.it.institution_project.model.response.*
 import com.it.institution_project.rest.DataModule
 import com.it.institution_project.ui.notifications.responsenoti.ResponseGetImageNoti
 import com.it.institution_project.ui.notifications.responsenoti.ResponseGetNoti
-import com.it.institution_project.view.login.bodylogin.BodyLogin
-import com.it.institution_project.view.login.responselogin.ResponseLogin
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.observers.DisposableObserver
 import io.reactivex.schedulers.Schedulers
+import kotlin.reflect.KFunction1
 
 class PresenterMain {
 
@@ -119,6 +118,61 @@ class PresenterMain {
                 }
 
                 override fun onNext(response: ResponseGetNoti) {
+                    Log.d("messagedeletedata", response.toString())
+                    datarResponse.invoke(response)
+
+                }
+
+                override fun onError(e: Throwable) {
+                    Log.d("messagegetdata", e.message)
+                    MessageError.invoke(e.message!!)
+                }
+            })
+
+    }
+    fun DeleteUserPersenterRx(
+        id: Int,
+        datarResponse: (ResponseGetNoti) -> Unit,
+        MessageError: (String) -> Unit
+    ) {
+        mDisposable = DataModule.myAppService.doDeleteUser(id)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeWith(object : DisposableObserver<ResponseGetNoti>() {
+
+                override fun onComplete() {
+
+                }
+
+                override fun onNext(response: ResponseGetNoti) {
+                    Log.d("messagedeletedata", response.toString())
+                    datarResponse.invoke(response)
+
+                }
+
+                override fun onError(e: Throwable) {
+                    Log.d("messagegetdata", e.message)
+                    MessageError.invoke(e.message!!)
+                }
+            })
+
+    }
+
+    fun DeleteInstitutionRx(
+        id: Int,
+        datarResponse: (ResponseGetInstitution) -> Unit,
+        MessageError: (String) -> Unit
+    ) {
+        mDisposable = DataModule.myAppService.doDeleteinsti(id)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeWith(object : DisposableObserver<ResponseGetInstitution>() {
+
+                override fun onComplete() {
+
+                }
+
+                override fun onNext(response: ResponseGetInstitution) {
                     Log.d("messagedeletedata", response.toString())
                     datarResponse.invoke(response)
 
@@ -262,6 +316,62 @@ class PresenterMain {
 
                 override fun onError(e: Throwable) {
                     Log.d("messageget", e.message)
+                    MessageError.invoke(e.message!!)
+                }
+            })
+
+    }
+
+    fun GetDataUserAll(
+
+        datarResponse: (ResponseGetUser) -> Unit,
+        MessageError: (String) -> Unit
+    ) {
+        mDisposable = DataModule.myAppService.doGetUser()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeWith(object : DisposableObserver<ResponseGetUser>() {
+
+                override fun onComplete() {
+
+                }
+
+                override fun onNext(response: ResponseGetUser) {
+                    Log.d("messagegetUser", response.toString())
+                    datarResponse.invoke(response)
+
+                }
+
+                override fun onError(e: Throwable) {
+                    Log.d("messagegetUser", e.message)
+                    MessageError.invoke(e.message!!)
+                }
+            })
+
+    }
+
+    fun GetDataInstitutionRx(
+
+        datarResponse: (ResponseGetInstitution) -> Unit,
+        MessageError: (String) -> Unit
+    ) {
+        mDisposable = DataModule.myAppService.doGetInstitution()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeWith(object : DisposableObserver<ResponseGetInstitution>() {
+
+                override fun onComplete() {
+
+                }
+
+                override fun onNext(response: ResponseGetInstitution) {
+                    Log.d("messagegetInstitution", response.toString())
+                    datarResponse.invoke(response)
+
+                }
+
+                override fun onError(e: Throwable) {
+                    Log.d("messagegetInstitution", e.message)
                     MessageError.invoke(e.message!!)
                 }
             })

@@ -19,6 +19,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".view.admin.ShowDataInstitution"></activity>
         <activity android:name=".view.admin.ShowDataUser" />
+        <activity android:name=".view.admin.DeleteUserActivity" />
         <activity android:name=".view.admin.ShowDataNotiAdmin" />
         <activity android:name=".view.admin.InsertInstitutionActivity" />
         <activity android:name=".view.main.PieChartActivity" />
