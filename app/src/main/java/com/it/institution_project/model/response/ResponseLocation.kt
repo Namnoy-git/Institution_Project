@@ -6,6 +6,6 @@ data class ResponseLocation(
 )
 
 data class Data(
-    val notic_lat: String,
-    val notic_long: String
+    val notic_lat: Double,
+    val notic_long: Double
 )

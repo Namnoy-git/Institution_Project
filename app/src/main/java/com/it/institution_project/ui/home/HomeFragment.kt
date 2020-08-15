@@ -9,6 +9,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 import com.it.institution_project.R
 import com.it.institution_project.model.response.ResponseProfileBody
 import com.it.institution_project.ui.notifications.PresenterNoti
@@ -37,37 +39,8 @@ class HomeFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
         view.Tv_location.setOnClickListener {
-            mNotiPersenter.GetlocationRx(
-
-                {
-                    val latlocation = ArrayList<String>()
-                    for(i in it.data){
-                        latlocation.add(i.notic_lat)
-                    }
-
-                    val longlocation = ArrayList<String>()
-                    for(i in it.data){
-                        longlocation.add(i.notic_long)
-                    }
-
-
-                    val i = Intent(context,MapsActivityAll::class.java)
-
-                    i.putExtra("latlocation", latlocation)
-                    i.putExtra("longlocation", longlocation)
-
-                    startActivityForResult(i, CODE)
-
-                },
-                {
-
-                }
-            )
-
-
-
-
-
+            val i = Intent(context,MapsActivityAll::class.java)
+            startActivity(i)
 
         }
 

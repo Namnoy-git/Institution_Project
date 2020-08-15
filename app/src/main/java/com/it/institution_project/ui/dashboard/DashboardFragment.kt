@@ -40,7 +40,7 @@ class DashboardFragment : Fragment() {
         }
 
         view.report.setOnClickListener {
-            val i =Intent(context,PieChartActivity::class.java)
+            val i =Intent(context,ReportActivity::class.java)
             startActivity(i)
         }
 

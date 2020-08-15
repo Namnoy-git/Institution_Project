@@ -27,9 +27,10 @@ class MapsActivityAll : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMar
     private lateinit var lastLocation: Location
     private lateinit var fusedLocationClient: FusedLocationProviderClient
 
-    private var lat : Double? = null
-    private var long : Double? = null
+    private var lat: Double? = null
+    private var long: Double? = null
 
+    var mNotiPersenter = PresenterMain()
 
     companion object {
         var YOUR_API_KEY = "AIzaSyC3uyMbAhsKkosqOm-P7IIyySYGt23kqV4"
@@ -40,11 +41,11 @@ class MapsActivityAll : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMar
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
 
-        var lat_location = intent.getStringExtra("latlocation")
-        var long_location = intent.getStringExtra("longlocation")
-
-        lat = lat_location.toDouble()
-        long = long_location.toDouble()
+//        var lat_location = intent.getStringExtra("latlocation")
+//        var long_location = intent.getStringExtra("longlocation")
+//
+//        lat = lat_location.toDouble()
+//        long = long_location.toDouble()
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
@@ -64,9 +65,13 @@ class MapsActivityAll : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMar
     }
 
     private fun setUpMap() {
-        if (ActivityCompat.checkSelfPermission(this,
-                android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this,
+        if (ActivityCompat.checkSelfPermission(
+                this,
+                android.Manifest.permission.ACCESS_FINE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            ActivityCompat.requestPermissions(
+                this,
                 arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION),
                 LOCATION_PERMISSION_REQUEST_CODE
             )
@@ -78,13 +83,29 @@ class MapsActivityAll : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMar
             if (location != null) {
                 lastLocation = location
                 val currentLatLng = LatLng(location.latitude, location.longitude)
-//                map.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng,14f))
+                map.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng,0f))
             }
         }
-                var location = LatLng(lat!!,long!!)
-                map.addMarker(MarkerOptions().position(location).title("จุดเกิดเหตุ"))
-                map.animateCamera(CameraUpdateFactory.newLatLngZoom(location, 15f))
+        mNotiPersenter.GetlocationRx(
+
+            {
+
+                for (i in it.data) {
+                    var location = LatLng(i.notic_lat, i.notic_long)
+                    map.addMarker(MarkerOptions().position(location).title("จุดเกิดเหตุ"))
+
+                }
+
+
+            },
+            {
+
             }
+        )
+
+
+//                map.animateCamera(CameraUpdateFactory.newLatLngZoom(location, 15f))
+    }
 
     override fun onMarkerClick(p0: Marker?): Boolean = false
 }

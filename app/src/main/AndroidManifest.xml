@@ -17,7 +17,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".view.main.PieChartActivity"></activity>
         <activity android:name=".view.main.ReportActivity" />
-        <activity android:name=".view.main.MainAdminActivity" />
+        <activity android:name=".view.admin.MainAdminActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

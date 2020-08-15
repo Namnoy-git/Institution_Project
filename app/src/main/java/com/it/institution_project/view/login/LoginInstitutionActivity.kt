@@ -7,6 +7,7 @@ import com.it.institution_project.view.main.MainActivity
 import com.it.institution_project.R
 import com.it.institution_project.rest.local.Preferrences
 import com.it.institution_project.view.login.responselogin.ResponseLogin
+import com.it.institution_project.view.admin.MainAdminActivity
 import kotlinx.android.synthetic.main.activity_login_institution.*
 
 class LoginInstitutionActivity : AppCompatActivity() {
@@ -18,10 +19,19 @@ class LoginInstitutionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_institution)
         initview()
-        setapi()
+        btn_Login.setOnClickListener{
+            if (edt_username_Login.text.toString()=="Admin"&&edt_Password_Login.text.toString()=="admin123456"){
+                val i = Intent(this,
+                    MainAdminActivity::class.java)
+                startActivity(i)
+                finish()
 
+            }else
+            {
+                setapi()
+            }
 
-
+            }
 
 
     }
@@ -43,16 +53,11 @@ class LoginInstitutionActivity : AppCompatActivity() {
 
 
     private fun setapi() {
-        btn_Login.setOnClickListener{
-
             mLoginPersenter.LoginPersenterRx(
                 edt_username_Login.text.toString(),
                 edt_Password_Login.text.toString(),
                 this::onSuccessSubscrib,
                 this::onErrorSubscrib)
-
-        }
-
     }
 
 

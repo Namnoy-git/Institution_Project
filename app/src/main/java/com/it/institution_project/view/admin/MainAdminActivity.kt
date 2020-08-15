@@ -1,4 +1,4 @@
-package com.it.institution_project.view.main
+package com.it.institution_project.view.admin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
