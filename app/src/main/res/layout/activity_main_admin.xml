@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    android:background="@drawable/pu">
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/textGrid"
+            android:text="สวัสดีผู้ดูแลระบบ"
+            android:textSize="34dp"
+            android:textStyle="bold"
+            android:textColor="#fff"
+            android:fontFamily="@font/mitr_light"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+    <GridLayout
+        android:columnCount="2"
+        android:rowCount="3"
+        android:alignmentMode="alignMargins"
+        android:columnOrderPreserved="false"
+        android:layout_weight="8"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="15dp">
+        <!-- Row 1 -->
+        <!-- Column 1 -->
+
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="174dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="50dp"
+            android:id="@+id/Notification"
+            android:src="@drawable/notic" />
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="174dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="50dp"
+            android:id="@+id/User"
+            android:src="@drawable/user" />
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="174dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="50dp"
+            android:id="@+id/AddUser"
+            android:src="@drawable/add" />
+        <ImageView
+            android:clickable="true"
+            android:layout_width="180dp"
+            android:layout_height="174dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="50dp"
+            android:id="@+id/More"
+            android:src="@drawable/more" />
+    </GridLayout>
+</LinearLayout>

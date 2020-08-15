@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/map_location_show"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/blue"
+    android:orientation="vertical"
+    tools:context=".view.help.HelpActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btn_back_detallhelp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:background="#00FFFFFF"
+                android:src="@drawable/abc_vector_test"
+                android:tint="#F3EFEF" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:text="รายละเอียด"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
+
+
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/trans_white_rectangle"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/Helptopic"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/mitr"
+                android:gravity="center"
+                android:hint="หัวข้อการแจ้งเหตุ"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewpager_Show"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:drawableLeft="@drawable/ic_border_color"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/mitr"
+                android:text="ประเภท"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Helptype"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:fontFamily="@font/mitr"
+                android:hint="ประเภทการแจ้งเหตุ"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/textView45"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:drawableLeft="@drawable/ic_border_color"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/mitr"
+                android:text="ระดับความรุนแรง"
+                android:textSize="22dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Helpleval"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:fontFamily="@font/mitr"
+                android:hint="ระดับความรุนแรง"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:drawableLeft="@drawable/ic_border_color"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/mitr"
+                android:text="รายละเอียด"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Helpdetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:fontFamily="@font/mitr"
+                android:hint="รายละเอียดการแจ้งเหตุ"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:drawableLeft="@drawable/ic_border_color"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/mitr"
+                android:text="สถานที่เกิดเหตุ"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Helplacation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:fontFamily="@font/mitr"
+                android:hint="เหตุเกิดที่ใด"
+                android:textSize="16sp" />
+
+            <TextView
+            android:id="@+id/map_location"
+            android:layout_width="81dp"
+            android:layout_height="26dp"
+            android:layout_marginLeft="280dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/mitr"
+            android:text="คลิกดูเเผนที่"
+
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="16sp" />
+
+            <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:drawableLeft="@drawable/ic_border_color"
+            android:drawablePadding="5dp"
+            android:fontFamily="@font/mitr"
+            android:text="สถานะการช่วยเหลือ"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+            <Spinner
+            android:id="@+id/planets_spinner"
+            android:layout_width="252dp"
+            android:layout_height="26dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="2dp" />
+
+            <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:drawableLeft="@drawable/ic_border_color"
+            android:drawablePadding="5dp"
+            android:fontFamily="@font/mitr"
+            android:text="รายละเอียดการช่วยเหลือ"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+            <EditText
+            android:id="@+id/Helpdetailhelp"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:inputType="textMultiLine"
+            android:fontFamily="@font/mitr"
+            android:hint="แสดงรายละเอียดการช่วยเหลือ"
+            android:layout_marginBottom="20dp"
+            android:textSize="16sp" />
+
+            <EditText
+            android:id="@+id/lat_location"
+            android:layout_width="0dp"
+            android:layout_height="0dp"/>
+
+            <EditText
+            android:id="@+id/long_location"
+            android:layout_width="0dp"
+            android:layout_height="0dp"/>
+
+
+
+            <Button
+            android:id="@+id/btnEditSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="80dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/login_button"
+            android:fontFamily="@font/mitr"
+            android:text="บันทึก"
+            android:textSize="20dp" />
+
+            <Button
+            android:id="@+id/btnEditConfirmProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="80dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/edit_button"
+            android:fontFamily="@font/mitr"
+            android:text="ยกเลิก"
+            android:textSize="20dp" />
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>
+
+
+
