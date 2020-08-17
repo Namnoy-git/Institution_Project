@@ -22,6 +22,8 @@ class ManageUserActivity : AppCompatActivity() {
         }
 
         btn_back_ManageAdmin.setOnClickListener {
+           val i = Intent(this,MainAdminActivity::class.java)
+            startActivity(i)
             finish()
         }
     }

@@ -2,8 +2,9 @@ package com.it.institution_project.rest
 
 
 import com.it.institution_project.model.body.BodyInsertAdmin
-import com.it.institution_project.model.body.BodyProfile
+import com.it.institution_project.model.body.BodyInstiProfile
 import com.it.institution_project.model.body.BodyShowStatus
+import com.it.institution_project.model.body.BodyUpdateProfile
 import com.it.institution_project.model.response.*
 
 import com.it.institution_project.ui.notifications.bodynoti.BodyUpdateNoti
@@ -32,8 +33,6 @@ interface ServiceAPI {
     @POST("/Insertinsti")
     fun doPostAdmin(@Body body: BodyInsertAdmin):Observable<ResponseInsertAdmin>
 
-    @POST("/userprofile")
-    fun doGetProfile(@Body body: BodyProfile?):Observable<ResponseProfile>
 
     @PUT("/updatenoti/{id}")
     fun UpdateNoti(@Path("id") notic_id: String, @Body body: BodyUpdateNoti?):Observable<ResponseUpdatenoti>
@@ -71,6 +70,12 @@ interface ServiceAPI {
 
     @DELETE("/insti/{id}")
     fun doDeleteinsti(@Path("id") id: Int): Observable<ResponseGetInstitution>
+
+    @POST("/getprofileinsti")
+    fun doInstitutionProfile(@Body bodyInsti: BodyInstiProfile?):Observable<ResponseProfileIns>
+
+    @PUT("/profileUpdateinsti/{id}")
+    fun doUpdateProfile(@Path("id")id:String,@Body body: BodyUpdateProfile):Observable<ResponseUpdateProfile>
 
 
 

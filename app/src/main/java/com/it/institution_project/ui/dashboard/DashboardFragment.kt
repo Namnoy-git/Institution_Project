@@ -17,6 +17,7 @@ import com.it.institution_project.rest.local.Preferrences.Companion.FILENAME
 import com.it.institution_project.view.login.LoginInstitutionActivity
 import com.it.institution_project.view.main.PieChartActivity
 import com.it.institution_project.view.main.ReportActivity
+import com.it.institution_project.view.profileinstitution.ProfileInstitution
 import kotlinx.android.synthetic.main.fragment_dashboard.view.*
 
 class DashboardFragment : Fragment() {
@@ -41,6 +42,11 @@ class DashboardFragment : Fragment() {
 
         view.report.setOnClickListener {
             val i =Intent(context,ReportActivity::class.java)
+            startActivity(i)
+        }
+
+        view.profile.setOnClickListener {
+            val i = Intent(context,ProfileInstitution::class.java)
             startActivity(i)
         }
 

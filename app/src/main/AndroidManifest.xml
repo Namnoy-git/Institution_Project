@@ -17,9 +17,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.admin.ShowDataInstitution"></activity>
+        <activity android:name=".view.profileinstitution.UpdateProfileIns"></activity>
+        <activity android:name=".view.profileinstitution.ProfileInstitution" />
+        <activity android:name=".view.admin.ShowDataInstitution" />
         <activity android:name=".view.admin.ShowDataUser" />
         <activity android:name=".view.admin.DeleteUserActivity" />
+        <activity android:name=".view.admin.DeleteInstitutionActivity" />
         <activity android:name=".view.admin.ShowDataNotiAdmin" />
         <activity android:name=".view.admin.InsertInstitutionActivity" />
         <activity android:name=".view.main.PieChartActivity" />

@@ -13,7 +13,16 @@ import com.it.institution_project.view.adapter.ImageViewPagerNotiAdapter
 import com.it.institution_project.view.help.HelpActivity
 import com.it.institution_project.view.main.MainActivity
 import com.it.institution_project.view.main.presentermain.PresenterMain
+import kotlinx.android.synthetic.main.activity_check.*
 import kotlinx.android.synthetic.main.activity_help.*
+import kotlinx.android.synthetic.main.activity_help.Helpdetail
+import kotlinx.android.synthetic.main.activity_help.Helplacation
+import kotlinx.android.synthetic.main.activity_help.Helpleval
+import kotlinx.android.synthetic.main.activity_help.Helptopic
+import kotlinx.android.synthetic.main.activity_help.Helptype
+import kotlinx.android.synthetic.main.activity_help.btnEditSave
+
+import kotlinx.android.synthetic.main.activity_help.planets_spinner
 import kotlinx.android.synthetic.main.activity_help.viewpager_Show
 
 class CheckActivity : AppCompatActivity() {
@@ -27,11 +36,12 @@ class CheckActivity : AppCompatActivity() {
 
         setapi()
 
-        btn_back_detallhelp.setOnClickListener {
+        btn_back_detallhelpCheck.setOnClickListener {
             finish()
         }
 
-        map_location.setOnClickListener {
+
+        map_Next.setOnClickListener {
             val lat:String = intent.getStringExtra("notic_lat")
             val long:String = intent.getStringExtra("notic_long")
             val i = Intent(this,MapsActivity::class.java)

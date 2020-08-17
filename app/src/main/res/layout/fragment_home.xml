@@ -26,6 +26,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
+                android:fontFamily="@font/mitr_semibold"
                 android:text="หน้าหลัก"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp" />
@@ -35,6 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:fontFamily="@font/mitr_semibold"
                 android:layout_marginLeft="260dp"
                 android:text="ดูเเผนที่"
                 android:textColor="#FFFFFF"

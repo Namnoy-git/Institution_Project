@@ -61,7 +61,7 @@ import java.io.File
 //        val bitmap = BitmapFactory.decodeFile(flie.absolutePath)
 //        holder.imagDetail.setImageBitmap(bitmap)
         holder.topic.text = notiData[position].notic_topic
-
+        holder.level.text = notiData[position].notic_voilent
         holder.status.text = notiData[position].notic_status
         holder.time.text = notiData[position].notic_time
 //        holder.username.text = profileuser[position].user_name
@@ -112,6 +112,7 @@ import java.io.File
         val status: TextView = itemsView.findViewById<TextView>(R.id.TV_Detailstatus)
         val time: TextView = itemsView.findViewById<TextView>(R.id.TV_Time)
         val imagDetail: ImageView = itemsView.findViewById<ImageView>(R.id.ImView)
+        val level : TextView = itemsView.findViewById<TextView>(R.id.TV_Level)
 //        val username : TextView = itemsView.findViewById<TextView>(R.id.TV_name)
 
 

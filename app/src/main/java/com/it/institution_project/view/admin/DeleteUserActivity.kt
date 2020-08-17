@@ -35,6 +35,8 @@ class DeleteUserActivity : AppCompatActivity() {
 
     private fun onSuccessSubscribe(responseData: ResponseGetNoti) {
 
+
+
     }
 
     private fun onErrorSubscribe(message:String) {

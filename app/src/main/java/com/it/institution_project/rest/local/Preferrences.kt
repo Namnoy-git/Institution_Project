@@ -17,7 +17,7 @@ class Preferrences(private var context: Context) {
         return getString(TOKEN) ?: ""
     }
 
-    fun getUserId(): String? {
+    fun getInsId(): String? {
         return getString(INS_ID)
     }
 

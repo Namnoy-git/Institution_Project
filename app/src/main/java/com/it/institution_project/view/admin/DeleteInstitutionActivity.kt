@@ -27,8 +27,9 @@ class DeleteInstitutionActivity : AppCompatActivity() {
         mMainPersenter.DeleteInstitutionRx(id,
             this::onSuccessSubscribe,
             this::onErrorSubscribe)
-        val i = Intent(this, ShowDataUser::class.java)
+        val i = Intent(this, ShowDataInstitution::class.java)
         startActivity(i)
+
 
     }
 

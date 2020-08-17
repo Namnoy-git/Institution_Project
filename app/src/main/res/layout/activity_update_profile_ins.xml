@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/blue"
+
     android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -19,7 +20,7 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/btn_back_detallInsertAdmin"
+                android:id="@+id/btn_back_detallUpdateAdmin"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -35,7 +36,7 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="5dp"
                 android:fontFamily="@font/mitr_semibold"
-                android:text="เพิ่มสิทธิ์หน่วยงาน"
+                android:text="เเก้ไขข้อมุล"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp" />
 
@@ -69,7 +70,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/edt_Department"
+                android:id="@+id/name_Ins"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -79,7 +80,7 @@
                 android:gravity="start|top"
                 android:hint="ระบุชื่อหน่วยงาน"
                 android:inputType="textMultiLine"
-                android:textSize="16dp" />
+                android:textSize="18dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -93,15 +94,18 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <Spinner
-                android:id="@+id/spinner_Amphor"
-                android:layout_width="match_parent"
+            <EditText
+                android:id="@+id/amphur_Ins"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
+                android:ems="10"
                 android:fontFamily="@font/mitr"
-                android:gravity="center"
-                android:spinnerMode="dialog" />
+                android:gravity="start|top"
+                android:hint="อำเภอ"
+                android:inputType="textMultiLine"
+                android:textSize="18dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -115,15 +119,18 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <Spinner
-                android:id="@+id/spinner_tambon"
-                android:layout_width="match_parent"
+            <EditText
+                android:id="@+id/tambon_Ins"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
+                android:ems="10"
                 android:fontFamily="@font/mitr"
-                android:gravity="center"
-                android:spinnerMode="dialog" />
+                android:gravity="start|top"
+                android:hint="ตำบล"
+                android:inputType="textMultiLine"
+                android:textSize="18dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -138,7 +145,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/edt_phone"
+                android:id="@+id/phone_Ins"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -148,7 +155,7 @@
                 android:gravity="start|top"
                 android:hint="ระบุเบอร์ติดต่อ"
                 android:inputType="number"
-                android:textSize="16dp" />
+                android:textSize="18dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -163,7 +170,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/edt_user_name"
+                android:id="@+id/username_Ins"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -173,7 +180,7 @@
                 android:gravity="start|top"
                 android:hint="ระบุชื่อผู้ใช้งาน"
                 android:inputType="textMultiLine"
-                android:textSize="16dp" />
+                android:textSize="18dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -188,7 +195,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/edt_password"
+                android:id="@+id/password_Ins"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -198,7 +205,7 @@
                 android:gravity="start|top"
                 android:hint="ระบุชื่อผู้ใช้งาน"
                 android:inputType="textMultiLine"
-                android:textSize="16dp" />
+                android:textSize="18dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -206,7 +213,7 @@
                 android:gravity="center"
                 android:orientation="horizontal">
                 <Button
-                    android:id="@+id/btnEditSaveAdmin"
+                    android:id="@+id/btnEditSaveIns"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -219,14 +226,14 @@
                     android:textSize="18dp" />
 
                 <Button
-                    android:id="@+id/btnEditConfirmProfile"
+                    android:id="@+id/btnEditCan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="25dp"
                     android:layout_marginBottom="50dp"
-                    android:fontFamily="@font/mitr"
                     android:background="@drawable/cancle_button"
+                    android:fontFamily="@font/mitr"
                     android:text="ยกเลิก"
                     android:textSize="18dp" />
             </LinearLayout>

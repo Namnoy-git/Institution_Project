@@ -63,7 +63,7 @@ class AdapterDataNoti(
 //        val bitmap = BitmapFactory.decodeFile(flie.absolutePath)
 //        holder.imagDetail.setImageBitmap(bitmap)
         holder.topic.text = notiData[position].notic_topic
-
+         holder.level.text = notiData[position].notic_voilent
         holder.status.text = notiData[position].notic_status
         holder.time.text = notiData[position].notic_time
 //        holder.userid.text = notiData[position].user_id.toString()
@@ -114,7 +114,7 @@ class AdapterDataNoti(
         val status: TextView = itemsView.findViewById<TextView>(R.id.TV_Detailstatus)
         val time: TextView = itemsView.findViewById<TextView>(R.id.TV_Time)
         val imagDetail: ImageView = itemsView.findViewById<ImageView>(R.id.ImView)
-//        val userid : TextView = itemsView.findViewById<TextView>(R.id.TV_name)
+        val level : TextView = itemsView.findViewById<TextView>(R.id.TV_Level)
 
 
     }

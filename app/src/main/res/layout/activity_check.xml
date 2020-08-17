@@ -21,14 +21,14 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/btn_back_detallhelp"
-                android:layout_width="wrap_content"
+                android:id="@+id/btn_back_detallhelpCheck"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="10dp"
                 android:background="#00FFFFFF"
-                android:src="@drawable/abc_vector_test"
-                android:tint="#F3EFEF" />
+                android:src="@drawable/backone"
+                android:tint="#F8F2F2" />
 
             <TextView
                 android:id="@+id/textView12"
@@ -36,10 +36,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="5dp"
+                android:fontFamily="@font/mitr_semibold"
                 android:text="รายละเอียด"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp" />
-
 
         </LinearLayout>
     </com.google.android.material.appbar.AppBarLayout>
@@ -56,7 +56,6 @@
             android:layout_marginEnd="20dp"
             android:background="@drawable/trans_white_rectangle"
             android:orientation="vertical">
-
 
             <TextView
                 android:id="@+id/Helptopic"
@@ -172,17 +171,22 @@
                 android:hint="เหตุเกิดที่ใด"
                 android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/map_location"
-                android:layout_width="81dp"
-                android:layout_height="26dp"
-                android:layout_marginLeft="280dp"
+            <ImageView
+                android:id="@+id/map_Next"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginTop="10dp"
-                android:fontFamily="@font/mitr"
-                android:text="คลิกดูเเผนที่"
+                android:layout_gravity="center"
+                android:background="@drawable/map"/>
 
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="16sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="18dp"
+                android:textColor="#FF4500	"
+                android:fontFamily="@font/mitr_semibold"
+                android:text="แสดงแผนที่"/>
 
             <TextView
                 android:id="@+id/textView7"
@@ -217,33 +221,36 @@
                 android:layout_height="0dp"/>
 
 
-
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
             <Button
                 android:id="@+id/btnEditSave"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="80dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginRight="80dp"
-                android:layout_marginBottom="5dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="30dp"
                 android:background="@drawable/login_button"
                 android:fontFamily="@font/mitr"
                 android:text="บันทึก"
-                android:textSize="20dp" />
+                android:textSize="18dp" />
 
             <Button
                 android:id="@+id/btnEditConfirmProfile"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="80dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="80dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
                 android:layout_marginBottom="30dp"
                 android:background="@drawable/edit_button"
                 android:fontFamily="@font/mitr"
                 android:text="ยกเลิก"
-                android:textSize="20dp" />
-
+                android:textSize="18dp"/>
+        </LinearLayout>
 
 
         </LinearLayout>
