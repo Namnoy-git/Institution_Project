@@ -29,8 +29,7 @@ class DeleteMainActivity : AppCompatActivity() {
             mMainPersenter.DeleteNotiPersenterRx(id,
                 this::onSuccessSubscribe,
                 this::onErrorSubscribe)
-            val i = Intent(this,MainActivity::class.java)
-            startActivity(i)
+
         finish()
 
     }

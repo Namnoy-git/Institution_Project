@@ -86,6 +86,7 @@ dependencies {
 
 // report
     implementation 'com.github.PhilJay:MPAndroidChart:v2.2.4'
-
+// img วงกลม
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 
 }

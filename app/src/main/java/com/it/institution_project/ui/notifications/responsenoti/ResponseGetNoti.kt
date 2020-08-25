@@ -32,5 +32,18 @@ data class DataList(
     val notic_type: String,
     val notic_voilent: String,
     val user_id: String,
-    val img: String
+    val img: String,
+    val username:String,
+    val userimg:String
+)
+
+data class ResponseTimeReport(
+    val `message`: List<DataReport>,
+    val status: Int
+)
+
+data class DataReport(
+
+    val notic_time: String
+
 )

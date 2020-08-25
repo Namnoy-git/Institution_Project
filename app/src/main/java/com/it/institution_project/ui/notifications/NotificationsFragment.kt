@@ -1,6 +1,8 @@
 package com.it.institution_project.ui.notifications
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +10,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.it.institution_project.R
+import com.it.institution_project.rest.local.Preferrences
 import com.it.institution_project.ui.notifications.responsenoti.DataList
 import com.it.institution_project.ui.notifications.responsenoti.ResponseGetNoti
 
@@ -24,7 +27,9 @@ class NotificationsFragment : Fragment() {
     var mResponsenoti = ArrayList<DataList>()
 
     lateinit var helpadapter: AdapterHelp
-
+    lateinit var pref: SharedPreferences
+    var insDis = ""
+    var insLoca = ""
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -32,7 +37,9 @@ class NotificationsFragment : Fragment() {
     ): View? {
 
         val view = inflater.inflate(R.layout.fragment_notifications, container, false)
-
+        pref = context?.getSharedPreferences(Preferrences.FILENAME, Context.MODE_PRIVATE)!!
+        insDis = pref.getString("ins_district", "") ?: ""
+        insLoca = pref.getString("ins_locality", "") ?: ""
         return view
     }
 
@@ -74,7 +81,9 @@ class NotificationsFragment : Fragment() {
     private fun setapi() {
         val status = "รับเรื่องและกำลังดำเนินการ"
         mHelpPersenter.GetDataNotiRx(
-             status,
+            status,
+//            insDis,
+//            insLoca,
             this::onSuccessSub,
             this::onErrorSub
         )

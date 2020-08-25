@@ -28,7 +28,7 @@ class AdapterShowNotiAdmin(
 //    private var profileuser : ArrayList<ResponseProfileBody>,
 //    private var seeuser : ArrayList<ResponseProfileBody>,
 //    private var mData : ArrayList<DeleteData>,
-    private var mInvork: (String,String, String, String, String, String, String, String, String, String, String,String) -> (Unit)
+    private var mInvork: (String, String, String, String, String, String, String, String, String, String, String, String) -> (Unit)
 
 ) : RecyclerView.Adapter<AdapterShowNotiAdmin.ViewHolder>() {
 
@@ -46,24 +46,25 @@ class AdapterShowNotiAdmin(
     }
 
 
-
-
     override fun getItemCount() = notiData.size
-
 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
         Picasso.get()
-            .load(Utils.BaseUrl+ "/uploads/"+notiData[position].img)
+            .load(Utils.BaseUrl + "/uploads/" + notiData[position].img)
 //            .load("$BaseUrl http://192.168.1.5:4000/uploads/Screenshot_20200717-143414.png")
 //            .load(flie)
 
             .into(holder.imagDetail)
-//        val bitmap = BitmapFactory.decodeFile(flie.absolutePath)
-//        holder.imagDetail.setImageBitmap(bitmap)
-        holder.topic.text = notiData[position].notic_topic
 
+        Picasso.get()
+            .load(Utils.BaseUrl + "/uploadregis/" + notiData[position].userimg)
+            .into(holder.userimg)
+//
+        holder.nameuser.text = notiData[position].username
+        holder.level.text = notiData[position].notic_voilent
+        holder.topic.text = notiData[position].notic_topic
         holder.status.text = notiData[position].notic_status
         holder.time.text = notiData[position].notic_time
 //        holder.userid.text = notiData[position].user_id.toString()
@@ -95,7 +96,9 @@ class AdapterShowNotiAdmin(
         val status: TextView = itemsView.findViewById<TextView>(R.id.TV_Detailstatus)
         val time: TextView = itemsView.findViewById<TextView>(R.id.TV_Time)
         val imagDetail: ImageView = itemsView.findViewById<ImageView>(R.id.ImView)
-//        val userid : TextView = itemsView.findViewById<TextView>(R.id.TV_name)
+        val level: TextView = itemsView.findViewById<TextView>(R.id.TV_Level)
+        val nameuser: TextView = itemsView.findViewById<TextView>(R.id.TV_nameUser)
+        val userimg: ImageView = itemsView.findViewById(R.id.ImViewProfileUser)
 
 
     }

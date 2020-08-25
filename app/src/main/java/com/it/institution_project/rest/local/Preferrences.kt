@@ -11,6 +11,9 @@ class Preferrences(private var context: Context) {
         const val FILENAME = "app_project"
         const val TOKEN = "token"
         const val INS_ID = "ins_id"
+        const val INS_DISTRICT = "ins_district"
+        const val INS_LOCALITY = "ins_locality"
+
     }
 
     fun getToken(): String {
@@ -20,6 +23,13 @@ class Preferrences(private var context: Context) {
     fun getInsId(): String? {
         return getString(INS_ID)
     }
+    fun getInsDistrict(): String? {
+        return getString(INS_DISTRICT)
+    }
+    fun getInsLocality(): String? {
+        return getString(INS_LOCALITY)
+    }
+
 
     private fun getString(key: String): String? {
         return getShareadPreferrneces().getString(key, null)
@@ -44,6 +54,7 @@ class Preferrences(private var context: Context) {
     fun saveUserId(ins_id: String) {
         saveString(INS_ID, ins_id)
     }
+
 
     private fun saveString(key: String, value: String) {
         val editor = getShareadPreferrneces().edit()

@@ -1,15 +1,13 @@
 package com.it.institution_project.rest
 
 
-import com.it.institution_project.model.body.BodyInsertAdmin
-import com.it.institution_project.model.body.BodyInstiProfile
-import com.it.institution_project.model.body.BodyShowStatus
-import com.it.institution_project.model.body.BodyUpdateProfile
+import com.it.institution_project.model.body.*
 import com.it.institution_project.model.response.*
 
 import com.it.institution_project.ui.notifications.bodynoti.BodyUpdateNoti
 import com.it.institution_project.ui.notifications.responsenoti.ResponseGetImageNoti
 import com.it.institution_project.ui.notifications.responsenoti.ResponseGetNoti
+import com.it.institution_project.ui.notifications.responsenoti.ResponseTimeReport
 import com.it.institution_project.ui.notifications.responsenoti.ResponseUpdatenoti
 import com.it.institution_project.view.login.bodylogin.BodyLogin
 import com.it.institution_project.view.login.responselogin.ResponseLogin
@@ -29,6 +27,9 @@ interface ServiceAPI {
 
     @POST("/notiimageadmin")
     fun dogetnotiAdmin(): Observable<ResponseGetNoti>
+
+    @POST("/gettimeReport")
+    fun dogetReport(@Body body: BodyTimeReport?): Observable<ResponseTimeReport>
 
     @POST("/Insertinsti")
     fun doPostAdmin(@Body body: BodyInsertAdmin):Observable<ResponseInsertAdmin>

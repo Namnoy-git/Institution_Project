@@ -1,14 +1,12 @@
 package com.it.institution_project.view.main.presentermain
 
 import android.util.Log
-import com.it.institution_project.model.body.BodyInsertAdmin
-import com.it.institution_project.model.body.BodyInstiProfile
-import com.it.institution_project.model.body.BodyShowStatus
-import com.it.institution_project.model.body.BodyUpdateProfile
+import com.it.institution_project.model.body.*
 import com.it.institution_project.model.response.*
 import com.it.institution_project.rest.DataModule
 import com.it.institution_project.ui.notifications.responsenoti.ResponseGetImageNoti
 import com.it.institution_project.ui.notifications.responsenoti.ResponseGetNoti
+import com.it.institution_project.ui.notifications.responsenoti.ResponseTimeReport
 import com.it.institution_project.view.profileinstitution.UpdateProfileIns
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
@@ -69,6 +67,34 @@ class PresenterMain {
 
                 override fun onError(e: Throwable) {
                     Log.d("messageget", e.message)
+                    MessageError.invoke(e.message!!)
+                }
+            })
+
+    }
+
+    fun GetTimeReportAdminRx(
+        timeRep : String,
+        datarResponse: (ResponseTimeReport) -> Unit,
+        MessageError: (String) -> Unit
+    ) {
+        mDisposable = DataModule.myAppService.dogetReport(BodyTimeReport(timeRep))
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeWith(object : DisposableObserver<ResponseTimeReport>() {
+
+                override fun onComplete() {
+
+                }
+
+                override fun onNext(response: ResponseTimeReport) {
+                    Log.d("messagegettime", response.toString())
+                    datarResponse.invoke(response)
+
+                }
+
+                override fun onError(e: Throwable) {
+                    Log.d("messagegettime", e.message)
                     MessageError.invoke(e.message!!)
                 }
             })
@@ -147,13 +173,13 @@ class PresenterMain {
                 }
 
                 override fun onNext(response: ResponseGetInstitution) {
-                    Log.d("messagedeletedata", response.toString())
+                    Log.d("messagedeletedatains", response.toString())
                     datarResponse.invoke(response)
 
                 }
 
                 override fun onError(e: Throwable) {
-                    Log.d("messagegetdata", e.message)
+                    Log.d("messagegetdatains", e.message)
                     MessageError.invoke(e.message!!)
                 }
             })

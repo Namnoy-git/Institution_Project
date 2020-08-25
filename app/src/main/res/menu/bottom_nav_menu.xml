@@ -2,19 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_home"
-        android:icon="@drawable/ic_home_black_24dp"
-        android:title="@string/title_home" />
-    <item
         android:id="@+id/navigation_check"
         android:icon="@drawable/ic_baseline_receipt_24"
         android:title="@string/title_check" />
-
 
     <item
         android:id="@+id/navigation_notifications"
         android:icon="@drawable/ic_baseline_local_hospital_24"
         android:title="@string/title_notifications" />
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_baseline_library_add_check_24"
+        android:title="@string/title_home" />
 
 
 

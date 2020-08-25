@@ -19,6 +19,15 @@
             android:background="#00B0FF"
             android:orientation="horizontal">
 
+            <ImageButton
+                android:id="@+id/btn_back_More"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:background="#00FFFFFF"
+                android:src="@drawable/backone"
+                android:tint="#F8F2F2" />
             <TextView
                 android:id="@+id/textView12"
                 android:layout_width="wrap_content"
@@ -34,46 +43,41 @@
         </LinearLayout>
     </com.google.android.material.appbar.AppBarLayout>
     <GridLayout
-        android:columnCount="2"
+        android:columnCount="1"
         android:rowCount="2"
         android:alignmentMode="alignMargins"
         android:columnOrderPreserved="false"
-        android:layout_marginLeft="15dp"
+        android:layout_marginLeft="50dp"
         android:layout_weight="8"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:padding="30dp">
         <!-- Row 1 -->
         <!-- Column 1 -->
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="174dp"
-            android:layout_marginBottom="30dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginTop="10dp"
-            android:id="@+id/profile"
-            android:src="@drawable/profileone" />
 
         <ImageView
+            android:id="@+id/report_admin"
             android:layout_width="150dp"
-            android:layout_height="174dp"
-            android:layout_marginBottom="30dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginTop="10dp"
-            android:id="@+id/report"
+            android:layout_height="154dp"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="80dp"
+            android:layout_marginBottom="50dp"
             android:src="@drawable/report" />
 
         <ImageView
-            android:id="@+id/button_logout"
+            android:id="@+id/button_logout_admin"
             android:layout_width="150dp"
-            android:layout_height="174dp"
-            android:layout_marginBottom="30dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
+            android:layout_height="154dp"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_marginStart="80dp"
             android:layout_marginTop="10dp"
 
+            android:layout_marginEnd="80dp"
+            android:layout_marginBottom="30dp"
             android:src="@drawable/logoutone" />
 
     </GridLayout>

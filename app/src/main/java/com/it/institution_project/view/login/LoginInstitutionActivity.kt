@@ -68,6 +68,7 @@ class LoginInstitutionActivity : AppCompatActivity() {
 
 
 
+
         val mIntent = Intent(this,
             MainActivity::class.java)
 

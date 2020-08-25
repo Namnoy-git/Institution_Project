@@ -18,6 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
+            android:background="#00B0FF"
             android:orientation="horizontal">
 
             <TextView
@@ -31,16 +32,16 @@
                 android:textColor="#FFFFFF"
                 android:textSize="24sp" />
 
-            <TextView
-                android:id="@+id/Tv_location"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:fontFamily="@font/mitr_semibold"
-                android:layout_marginLeft="260dp"
-                android:text="ดูเเผนที่"
-                android:textColor="#FFFFFF"
-                android:textSize="24sp" />
+<!--            <TextView-->
+<!--                android:id="@+id/Tv_location"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:fontFamily="@font/mitr_semibold"-->
+<!--                android:layout_marginLeft="260dp"-->
+<!--                android:text="ดูเเผนที่"-->
+<!--                android:textColor="#FFFFFF"-->
+<!--                android:textSize="24sp" />-->
 
 
         </LinearLayout>

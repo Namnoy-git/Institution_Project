@@ -60,8 +60,14 @@ class AdapterDataNoti(
 //            .load(flie)
 
             .into(holder.imagDetail)
+
+
+        Picasso.get()
+            .load(Utils.BaseUrl+ "/uploadregis/"+notiData[position].userimg)
+            .into(holder.userimg)
 //        val bitmap = BitmapFactory.decodeFile(flie.absolutePath)
 //        holder.imagDetail.setImageBitmap(bitmap)
+        holder.nameuser.text = notiData[position].username
         holder.topic.text = notiData[position].notic_topic
          holder.level.text = notiData[position].notic_voilent
         holder.status.text = notiData[position].notic_status
@@ -97,6 +103,7 @@ class AdapterDataNoti(
                         val i = Intent(context, DeleteMainActivity::class.java)
                         i.putExtra("id", notiData[position].notic_id)
                         context.startActivity(i)
+
                     }
                 }
             }
@@ -115,6 +122,8 @@ class AdapterDataNoti(
         val time: TextView = itemsView.findViewById<TextView>(R.id.TV_Time)
         val imagDetail: ImageView = itemsView.findViewById<ImageView>(R.id.ImView)
         val level : TextView = itemsView.findViewById<TextView>(R.id.TV_Level)
+        val nameuser : TextView = itemsView.findViewById<TextView>(R.id.TV_nameUser)
+        val userimg : ImageView = itemsView.findViewById(R.id.ImViewProfileUser)
 
 
     }

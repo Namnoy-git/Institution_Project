@@ -1,7 +1,7 @@
 package com.it.institution_project.model.response
 
 data class ResponseGetTambon(
-    val message: List<MessageTambon>,
+    val data: List<MessageTambon>,
     val status: Int
 )
 

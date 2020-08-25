@@ -1,6 +1,8 @@
 package com.it.institution_project.ui.home
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -13,6 +15,7 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.it.institution_project.R
 import com.it.institution_project.model.response.ResponseProfileBody
+import com.it.institution_project.rest.local.Preferrences.Companion.FILENAME
 import com.it.institution_project.ui.notifications.PresenterNoti
 import com.it.institution_project.ui.notifications.responsenoti.DataList
 
@@ -29,6 +32,10 @@ class HomeFragment : Fragment() {
     var nResponsenoti = ArrayList<DataList>()
     var mprofile = ArrayList<ResponseProfileBody>()
     lateinit var notiAdapterData: AdapterDataNoti
+    lateinit var pref: SharedPreferences
+    var insDis = ""
+    var insLoca = ""
+
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -38,11 +45,15 @@ class HomeFragment : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
-        view.Tv_location.setOnClickListener {
-            val i = Intent(context,MapsActivityAll::class.java)
-            startActivity(i)
+        pref = context?.getSharedPreferences(FILENAME, Context.MODE_PRIVATE)!!
+        insDis = pref.getString("ins_district", "") ?: ""
+        insLoca = pref.getString("ins_locality", "") ?: ""
 
-        }
+//        view.Tv_location.setOnClickListener {
+//            val i = Intent(context,MapsActivityAll::class.java)
+//            startActivity(i)
+//
+//        }
 
 
 
@@ -90,6 +101,8 @@ class HomeFragment : Fragment() {
         val staus = "ช่วยเหลือเรียบร้อย"
         mNotiPersenter.GetDataNotiRx(
             staus,
+//            insDis,
+//            insLoca,
             this::onSuccessSub,
             this::onErrorSub
         )

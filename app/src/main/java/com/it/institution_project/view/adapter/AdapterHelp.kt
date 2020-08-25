@@ -58,8 +58,12 @@ import java.io.File
 //            .load(flie)
 
             .into(holder.imagDetail)
-//        val bitmap = BitmapFactory.decodeFile(flie.absolutePath)
-//        holder.imagDetail.setImageBitmap(bitmap)
+        Picasso.get()
+            .load(Utils.BaseUrl + "/uploadregis/" + notiData[position].userimg)
+            .into(holder.userimg)
+//
+        holder.nameuser.text = notiData[position].username
+      
         holder.topic.text = notiData[position].notic_topic
         holder.level.text = notiData[position].notic_voilent
         holder.status.text = notiData[position].notic_status
@@ -113,7 +117,8 @@ import java.io.File
         val time: TextView = itemsView.findViewById<TextView>(R.id.TV_Time)
         val imagDetail: ImageView = itemsView.findViewById<ImageView>(R.id.ImView)
         val level : TextView = itemsView.findViewById<TextView>(R.id.TV_Level)
-//        val username : TextView = itemsView.findViewById<TextView>(R.id.TV_name)
+        val nameuser: TextView = itemsView.findViewById<TextView>(R.id.TV_nameUser)
+        val userimg: ImageView = itemsView.findViewById(R.id.ImViewProfileUser)
 
 
     }

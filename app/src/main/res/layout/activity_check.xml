@@ -18,6 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
+            android:background="#00B0FF"
             android:orientation="horizontal">
 
             <ImageButton
@@ -75,8 +76,24 @@
                 android:id="@+id/viewpager_Show"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp" />
+
+            <com.viewpagerindicator.CirclePageIndicator
+                android:id="@+id/indicator"
+                android:layout_width="fill_parent"
+                android:layout_height="23dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="bottom"
+                android:padding="10dip"
+                app:centered="true"
+                app:fillColor="#1060E6"
+                app:pageColor="#65DEEA"
+                app:snap="false"
+                app:strokeColor="#6FDFEA" />
 
             <TextView
                 android:id="@+id/textView"
@@ -224,6 +241,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:gravity="center"
             android:orientation="horizontal">
             <Button

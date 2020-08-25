@@ -7,7 +7,7 @@ data class ResponseGetInstitution(
 
 data class MessageGetInstitution(
     val ins_district: String,
-    val ins_id: String,
+    val ins_id: Int,
     val ins_locality: String,
     val ins_name: String,
     val ins_password: String,

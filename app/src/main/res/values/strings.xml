@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Institution_Project</string>
-    <string name="title_home">หน้าหลัก</string>
     <string name="title_check">ตรวจสอบ</string>
     <string name="title_notifications">ช่วยเหลือ</string>
+    <string name="title_home">ช่วยเหลือสำเร็จ</string>
     <string name="title_dashboard">อื่นๆ</string>
 
 

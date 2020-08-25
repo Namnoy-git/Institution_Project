@@ -25,6 +25,11 @@ class MainAdminActivity : AppCompatActivity() {
             val i = Intent(this, ShowDataNotiAdmin::class.java)
             startActivity(i)
         }
+        More.setOnClickListener {
+            val i = Intent(this,MoreActivity::class.java)
+            startActivity(i)
+        }
+
 
     }
 }

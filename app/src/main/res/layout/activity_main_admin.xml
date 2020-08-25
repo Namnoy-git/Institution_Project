@@ -11,12 +11,13 @@
 
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:layout_marginTop="20dp">
+        android:background="#00B0FF"
+        >
 
         <TextView
             android:id="@+id/textGrid"
             android:text="สวัสดีผู้ดูแลระบบ"
-            android:textSize="34dp"
+            android:textSize="28dp"
             android:textStyle="bold"
             android:textColor="#fff"
             android:fontFamily="@font/mitr_light"
@@ -32,6 +33,7 @@
         android:alignmentMode="alignMargins"
         android:columnOrderPreserved="false"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
         android:layout_weight="8"
         android:layout_width="match_parent"
         android:layout_height="0dp"

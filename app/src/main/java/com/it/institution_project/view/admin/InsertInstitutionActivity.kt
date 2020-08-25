@@ -48,7 +48,7 @@ class InsertInstitutionActivity : AppCompatActivity() {
         mNotiPersenter.GetDataTambon(
             {
                 val tambon = ArrayList<String>()
-                for (i in it.message) {
+                for (i in it.data) {
                     tambon.add(i.tambon_name)
                 }
                 val adapter =
