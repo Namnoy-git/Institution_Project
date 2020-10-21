@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import android.widget.Toast
+import androidx.viewpager.widget.ViewPager
 import com.it.institution_project.R
 import com.it.institution_project.mapapi.MapsActivity
 import com.it.institution_project.ui.notifications.PresenterNoti
@@ -12,6 +14,7 @@ import com.it.institution_project.ui.notifications.responsenoti.ResponseUpdateno
 import com.it.institution_project.view.adapter.ImageViewPagerNotiAdapter
 import com.it.institution_project.view.main.MainActivity
 import com.it.institution_project.view.main.presentermain.PresenterMain
+import com.viewpagerindicator.CirclePageIndicator
 import kotlinx.android.synthetic.main.activity_help.*
 import kotlinx.android.synthetic.main.activity_help.viewpager_Show
 
@@ -62,7 +65,7 @@ class HelpActivity : AppCompatActivity() {
         val location:String = intent.getStringExtra("notic_location")
         val status:String = intent.getStringExtra("notic_status")
         val steps:String = intent.getStringExtra("notic_steps")
-//        val lat:String = intent.getStringExtra("notic_lat")
+        val notic_tambon:String = intent.getStringExtra("notic_tambon")
 //        val long:String = intent.getStringExtra("notic_long")
         val time:String = intent.getStringExtra("notic_time")
 
@@ -72,6 +75,7 @@ class HelpActivity : AppCompatActivity() {
         Helpdetail.text = detail
         Helplacation.text = location
         Helpdetailhelp.setText(steps)
+        Help_tambon.text = notic_tambon
 //        lat_location.setText(lat)
 //        long_location.setText(long)
 
@@ -80,6 +84,7 @@ class HelpActivity : AppCompatActivity() {
 //        TV_TimetShow.text = time
 
         btnEditSave.setOnClickListener {
+
             mUpdatePersenter.UpdateUserPersenterRx(notic_id,
                 planets_spinner.selectedItem.toString(),
                 Helpdetailhelp.text.toString(),
@@ -89,6 +94,21 @@ class HelpActivity : AppCompatActivity() {
         }
     }
     private fun onSuccessSubscride(response:ResponseUpdatenoti) {
+        val user_id = intent.getStringExtra("user_id")
+        val notic_id = intent.getStringExtra("notic_id")
+        mnotiPersenter.CheckNotiRx(
+            user_id,
+            planets_spinner.selectedItem.toString(),
+            "ผู้ใช้ทั่วไป",
+
+            {
+                Toast.makeText(this, "บันทึกข้อมูลเรียบร้อย", Toast.LENGTH_SHORT).show()
+            },
+            {
+
+            }
+        )
+
         val i = Intent(this, MainActivity::class.java)
         startActivity(i)
     }
@@ -102,6 +122,8 @@ class HelpActivity : AppCompatActivity() {
         mnotiPersenter.GetImageNotiRx(notic_id,
 
             {
+
+                val viewPager = findViewById<ViewPager>(R.id.viewpager_Show)
                 val photos = ArrayList<String>()
                 for (i in it.message){
                     photos.add(i.img_normal)
@@ -110,6 +132,11 @@ class HelpActivity : AppCompatActivity() {
                     ImageViewPagerNotiAdapter(this@HelpActivity, photos)
                 viewpager_Show.adapter = imageViewPagerAdapter
 
+                val indicator = findViewById<CirclePageIndicator>(R.id.indicator).also {
+                    it.setViewPager(viewPager)
+                }
+                val density = resources.displayMetrics.density
+                indicator.radius = 5 * density
             },
             {
 

@@ -32,7 +32,7 @@
         android:rowCount="3"
         android:alignmentMode="alignMargins"
         android:columnOrderPreserved="false"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="30dp"
         android:layout_weight="8"
         android:layout_width="match_parent"
@@ -41,42 +41,58 @@
         <!-- Row 1 -->
         <!-- Column 1 -->
 
-        <ImageView
+        <Button
+
             android:layout_width="150dp"
             android:layout_height="174dp"
-            android:layout_marginBottom="30dp"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/trans_orange_rectangle"
+            android:fontFamily="@font/mitr_semibold"
+            android:textSize="20dp"
+            android:text="ข้อมูล            การแจ้งเหตุ"
             android:id="@+id/Notification"
-            android:src="@drawable/notications" />
-        <ImageView
+             />
+        <Button
             android:layout_width="150dp"
             android:layout_height="174dp"
-            android:layout_marginBottom="30dp"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/trans_orange_rectangle"
+            android:fontFamily="@font/mitr_semibold"
+            android:textSize="20dp"
+            android:text="จัดการ         ข้อมูลผู้ใช้งาน"
             android:id="@+id/DataUser"
-            android:src="@drawable/datauser" />
-        <ImageView
+           />
+        <Button
             android:layout_width="150dp"
             android:layout_height="174dp"
-            android:layout_marginBottom="30dp"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/trans_orange_rectangle"
+            android:fontFamily="@font/mitr_semibold"
+            android:textSize="20dp"
+            android:text="เพิ่มสิทธิ์      หน่วยงาน"
             android:id="@+id/AddUser"
-            android:src="@drawable/add" />
-        <ImageView
-            android:clickable="true"
+            />
+        <Button
             android:layout_width="150dp"
             android:layout_height="174dp"
-            android:layout_marginBottom="30dp"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="45dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/trans_orange_rectangle"
+            android:fontFamily="@font/mitr_semibold"
+            android:textSize="20dp"
+            android:text="อื่นๆ "
             android:id="@+id/More"
-            android:src="@drawable/more" />
+            />
     </GridLayout>
 </LinearLayout>

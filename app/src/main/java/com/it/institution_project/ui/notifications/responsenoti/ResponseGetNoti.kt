@@ -34,7 +34,8 @@ data class DataList(
     val user_id: String,
     val img: String,
     val username:String,
-    val userimg:String
+    val userimg:String,
+    val phone:String
 )
 
 data class ResponseTimeReport(
@@ -44,6 +45,6 @@ data class ResponseTimeReport(
 
 data class DataReport(
 
-    val notic_time: String
+    val time: String
 
 )

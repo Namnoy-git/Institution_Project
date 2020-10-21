@@ -3,6 +3,8 @@ package com.it.institution_project.view.admin
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.it.institution_project.R
@@ -21,7 +23,8 @@ class InsertInstitutionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_insert_institution)
         setapi()
-        setspinner()
+        setspinneramphur()
+
 
         btn_back_detallInsertAdmin.setOnClickListener {
             finish()
@@ -30,22 +33,10 @@ class InsertInstitutionActivity : AppCompatActivity() {
 
     }
 
-    private fun setspinner() {
-        mNotiPersenter.GetDataAmphur(
-            {
-                val amphur = ArrayList<String>()
-                for (i in it.data) {
-                    amphur.add(i.amphur_name)
-                }
-                val adapter =
-                    ArrayAdapter(baseContext, android.R.layout.simple_dropdown_item_1line, amphur)
-                spinner_Amphor.adapter = adapter
-            },
-            {
+    private fun setspinnertambon(amphurID:Int) {
 
-            }
-        )
         mNotiPersenter.GetDataTambon(
+            amphurID,
             {
                 val tambon = ArrayList<String>()
                 for (i in it.data) {
@@ -59,6 +50,40 @@ class InsertInstitutionActivity : AppCompatActivity() {
 
             }
         )
+    }
+
+    private fun setspinneramphur() {
+        mNotiPersenter.GetDataAmphur(
+            {
+                val amphur = ArrayList<String>()
+                for (i in it.data) {
+                    amphur.add(i.amphur_name)
+                }
+                val adapter =
+                    ArrayAdapter(baseContext, android.R.layout.simple_dropdown_item_1line, amphur)
+                spinner_Amphor.adapter = adapter
+
+                spinner_Amphor.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                    override fun onNothingSelected(parent: AdapterView<*>?) {
+                        println("erreur")
+
+                    }
+
+                    override fun onItemSelected(
+                        parent: AdapterView<*>?,
+                        view: View?,
+                        position: Int,
+                        id: Long
+                    ) {
+                        setspinnertambon(position+1)
+                    }
+                }
+            },
+            {
+
+            }
+        )
+
     }
 
     private fun setapi() {

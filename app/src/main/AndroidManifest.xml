@@ -53,6 +53,8 @@
         <activity android:name=".ui.check.CheckActivity" />
         <activity android:name=".view.showdatanoti.ShowDataNoti" />
         <activity android:name=".view.main.MainActivity" />
+        <activity android:name=".view.main.CheckNotiActivity" />
+
         <activity android:name=".view.login.LoginInstitutionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -55,6 +55,10 @@ class Preferrences(private var context: Context) {
         saveString(INS_ID, ins_id)
     }
 
+    fun saveLocality(Locality: String) {
+        saveString(INS_LOCALITY, Locality)
+    }
+
 
     private fun saveString(key: String, value: String) {
         val editor = getShareadPreferrneces().edit()

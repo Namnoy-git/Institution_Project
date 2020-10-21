@@ -1,5 +1,6 @@
 package com.it.institution_project.view.adapter
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.graphics.BitmapFactory
@@ -28,9 +29,10 @@ import java.io.File
 //    private var profileuser : ArrayList<ResponseProfileBody>,
 //    private var seeuser : ArrayList<ResponseProfileBody>,
 //    private var mData : ArrayList<DeleteData>,
-     private var mInvork: (String, String, String, String, String, String, String, String, String, String, String) -> (Unit)
+     private var mInvork: (String,String, String, String, String,String, String, String, String, String, String, String, String) -> (Unit)
 
 ) : RecyclerView.Adapter<AdapterHelp.ViewHolder>() {
+
 
     val selectProfile = PresenterMain()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -63,7 +65,7 @@ import java.io.File
             .into(holder.userimg)
 //
         holder.nameuser.text = notiData[position].username
-      
+        holder.phone.text = notiData[position].phone
         holder.topic.text = notiData[position].notic_topic
         holder.level.text = notiData[position].notic_voilent
         holder.status.text = notiData[position].notic_status
@@ -74,11 +76,13 @@ import java.io.File
             mInvork.invoke(
 
                 notiData[position].notic_id.toString(),
+                notiData[position].user_id,
                 notiData[position].notic_topic,
                 notiData[position].notic_detail,
                 notiData[position].notic_type,
                 notiData[position].notic_voilent,
                 notiData[position].notic_amphur,
+                notiData[position].notic_tambon,
                 notiData[position].notic_status,
                 notiData[position].notic_steps,
                 notiData[position].notic_lat,
@@ -86,6 +90,7 @@ import java.io.File
                 notiData[position].notic_time
             )
         }
+
         holder.itemView.setOnLongClickListener {
 
             val builderSingle = AlertDialog.Builder(context)
@@ -99,6 +104,7 @@ import java.io.File
                         val i = Intent(context, DeleteMainActivity::class.java)
                         i.putExtra("id", notiData[position].notic_id)
                         context.startActivity(i)
+
                     }
                 }
             }
@@ -119,6 +125,7 @@ import java.io.File
         val level : TextView = itemsView.findViewById<TextView>(R.id.TV_Level)
         val nameuser: TextView = itemsView.findViewById<TextView>(R.id.TV_nameUser)
         val userimg: ImageView = itemsView.findViewById(R.id.ImViewProfileUser)
+        val phone: TextView = itemsView.findViewById<TextView>(R.id.TV_phone)
 
 
     }

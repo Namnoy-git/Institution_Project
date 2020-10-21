@@ -83,7 +83,7 @@ class MapsActivityAll : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMar
             if (location != null) {
                 lastLocation = location
                 val currentLatLng = LatLng(location.latitude, location.longitude)
-                map.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng,0f))
+                map.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng,15f))
             }
         }
         mNotiPersenter.GetlocationRx(

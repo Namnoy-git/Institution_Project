@@ -34,6 +34,7 @@ class ProfileInstitution : AppCompatActivity() {
             i.putExtra("edt_password", edt_password.text.toString())
 
             startActivity(i)
+            finish()
         }
     }
 

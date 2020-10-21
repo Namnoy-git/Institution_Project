@@ -31,6 +31,9 @@ interface ServiceAPI {
     @POST("/gettimeReport")
     fun dogetReport(@Body body: BodyTimeReport?): Observable<ResponseTimeReport>
 
+//    @POST("/reporttime")
+//    fun doreporttime(@Body body: BodyTimeReport?): Observable<ResponseTimeReport>
+
     @POST("/Insertinsti")
     fun doPostAdmin(@Body body: BodyInsertAdmin):Observable<ResponseInsertAdmin>
 
@@ -60,8 +63,8 @@ interface ServiceAPI {
     @GET("/getamphur")
     fun doGetAmphur(): Observable<ResponseGetAmphur>
 
-    @GET("/gettambon")
-    fun doGetTambon(): Observable<ResponseGetTambon>
+    @GET("/gettambon/{id}")
+    fun doGetTambon(@Path("id") id: Int): Observable<ResponseGetTambon>
 
     @GET("/getuser")
     fun doGetUser(): Observable<ResponseGetUser>
@@ -78,6 +81,12 @@ interface ServiceAPI {
     @PUT("/profileUpdateinsti/{id}")
     fun doUpdateProfile(@Path("id")id:String,@Body body: BodyUpdateProfile):Observable<ResponseUpdateProfile>
 
+    @POST("/checknoti2")
+    fun doCheckNoti(@Body body: BodyCheckNoti):Observable<ResponseCheckNoti>
 
+    @POST("/getchecknotiIns")
+    fun dogetCheckNoti(@Body body: BodyChecknotiUser): Observable<ResponseCheckNotiUser>
 
+    @DELETE("/checknotification/{id}")
+    fun doDeleteCheck(@Path("id")id:Int):Observable<ResponseCheckNoti>
 }

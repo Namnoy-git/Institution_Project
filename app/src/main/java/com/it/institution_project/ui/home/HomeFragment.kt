@@ -15,12 +15,14 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.it.institution_project.R
 import com.it.institution_project.model.response.ResponseProfileBody
+import com.it.institution_project.rest.local.Preferrences
 import com.it.institution_project.rest.local.Preferrences.Companion.FILENAME
 import com.it.institution_project.ui.notifications.PresenterNoti
 import com.it.institution_project.ui.notifications.responsenoti.DataList
 
 import com.it.institution_project.ui.notifications.responsenoti.ResponseGetNoti
 import com.it.institution_project.view.adapter.AdapterDataNoti
+import com.it.institution_project.view.main.CheckNotiActivity
 import com.it.institution_project.view.main.presentermain.PresenterMain
 import com.it.institution_project.view.showdatanoti.ShowDataNoti
 import kotlinx.android.synthetic.main.fragment_home.view.*
@@ -33,8 +35,7 @@ class HomeFragment : Fragment() {
     var mprofile = ArrayList<ResponseProfileBody>()
     lateinit var notiAdapterData: AdapterDataNoti
     lateinit var pref: SharedPreferences
-    var insDis = ""
-    var insLoca = ""
+    var tambon = ""
 
 
     override fun onCreateView(
@@ -46,8 +47,8 @@ class HomeFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
         pref = context?.getSharedPreferences(FILENAME, Context.MODE_PRIVATE)!!
-        insDis = pref.getString("ins_district", "") ?: ""
-        insLoca = pref.getString("ins_locality", "") ?: ""
+        tambon = pref.getString("ins_locality", "") ?: ""
+
 
 //        view.Tv_location.setOnClickListener {
 //            val i = Intent(context,MapsActivityAll::class.java)
@@ -71,10 +72,11 @@ class HomeFragment : Fragment() {
 
     private fun setadapter(view: View) {
         notiAdapterData =
-            AdapterDataNoti(requireContext(), nResponsenoti) { notic_id,notic_topic, notic_detail,
+            AdapterDataNoti(requireContext(), nResponsenoti) { notic_id,user_id,notic_topic, notic_detail,
                                                                notic_type, notic_voilent, notic_amphur,notic_tambon, notic_status, notic_steps, notic_lat, notic_long, notic_time ->
                 val i = Intent(context, ShowDataNoti::class.java)
                 i.putExtra("notic_id", notic_id)
+                i.putExtra("user_id", user_id)
                 i.putExtra("notic_topic", notic_topic)
                 i.putExtra("notic_detail", notic_detail)
                 i.putExtra("notic_type", notic_type)
@@ -101,8 +103,7 @@ class HomeFragment : Fragment() {
         val staus = "ช่วยเหลือเรียบร้อย"
         mNotiPersenter.GetDataNotiRx(
             staus,
-//            insDis,
-//            insLoca,
+            tambon,
             this::onSuccessSub,
             this::onErrorSub
         )

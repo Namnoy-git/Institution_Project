@@ -48,6 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_gravity="center"
+        android:layout_marginTop="50dp"
         android:layout_weight="8"
         android:alignmentMode="alignMargins"
         android:columnCount="1"
@@ -57,8 +58,7 @@
         <!-- Row 1 -->
         <!-- Column 1 -->
 
-        <ImageView
-
+        <Button
             android:id="@+id/User_manage"
             android:layout_width="180dp"
             android:layout_height="174dp"
@@ -66,9 +66,12 @@
             android:layout_marginTop="30dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="30dp"
-            android:src="@drawable/manageuser" />
+            android:background="@drawable/trans_orange_rectangle"
+            android:fontFamily="@font/mitr_semibold"
+            android:text="ผู้ใช้งานทั่วไป"
+            android:textSize="24sp" />
 
-        <ImageView
+        <Button
 
             android:id="@+id/ins_manage"
             android:layout_width="180dp"
@@ -77,7 +80,10 @@
             android:layout_marginTop="30dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="30dp"
-            android:src="@drawable/manageresuce" />
+            android:text="หน่วยงาน"
+            android:background="@drawable/trans_orange_rectangle"
+            android:fontFamily="@font/mitr_semibold"
+            android:textSize="24sp"/>
 
     </GridLayout>
 </LinearLayout>

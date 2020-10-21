@@ -28,7 +28,7 @@ class AdapterShowNotiAdmin(
 //    private var profileuser : ArrayList<ResponseProfileBody>,
 //    private var seeuser : ArrayList<ResponseProfileBody>,
 //    private var mData : ArrayList<DeleteData>,
-    private var mInvork: (String, String, String, String, String, String, String, String, String, String, String, String) -> (Unit)
+    private var mInvork: (String, String, String, String, String, String, String, String, String, String, String,String) -> (Unit)
 
 ) : RecyclerView.Adapter<AdapterShowNotiAdmin.ViewHolder>() {
 
@@ -62,6 +62,7 @@ class AdapterShowNotiAdmin(
             .load(Utils.BaseUrl + "/uploadregis/" + notiData[position].userimg)
             .into(holder.userimg)
 //
+        holder.TV_phone.text = notiData[position].phone
         holder.nameuser.text = notiData[position].username
         holder.level.text = notiData[position].notic_voilent
         holder.topic.text = notiData[position].notic_topic
@@ -83,6 +84,8 @@ class AdapterShowNotiAdmin(
                 notiData[position].notic_lat,
                 notiData[position].notic_long,
                 notiData[position].notic_time
+//                notiData[position].phone
+
             )
         }
 
@@ -99,7 +102,7 @@ class AdapterShowNotiAdmin(
         val level: TextView = itemsView.findViewById<TextView>(R.id.TV_Level)
         val nameuser: TextView = itemsView.findViewById<TextView>(R.id.TV_nameUser)
         val userimg: ImageView = itemsView.findViewById(R.id.ImViewProfileUser)
-
+        val TV_phone : TextView = itemsView.findViewById(R.id.TV_phone)
 
     }
 

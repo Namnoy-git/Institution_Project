@@ -60,8 +60,8 @@ class UpdateProfileIns : AppCompatActivity() {
                 password_Ins.text.toString(),
 
                 {
-//                    val i = Intent(this,ProfileInstitution::class.java)
-//                    startActivity(i)
+                    val i = Intent(this,ProfileInstitution::class.java)
+                    startActivity(i)
                     finish()
 
                 },

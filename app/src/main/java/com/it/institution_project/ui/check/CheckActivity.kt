@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import android.widget.Toast
 import androidx.viewpager.widget.ViewPager
 import com.it.institution_project.R
 import com.it.institution_project.mapapi.MapsActivity
@@ -75,6 +76,7 @@ class CheckActivity : AppCompatActivity() {
         val location:String = intent.getStringExtra("notic_location")
         val status:String = intent.getStringExtra("notic_status")
         val steps:String = intent.getStringExtra("notic_steps")
+        val notic_tambon:String = intent.getStringExtra("notic_tambon")
 //        val lat:String = intent.getStringExtra("notic_lat")
 //        val long:String = intent.getStringExtra("notic_long")
         val time:String = intent.getStringExtra("notic_time")
@@ -84,7 +86,7 @@ class CheckActivity : AppCompatActivity() {
         Helpleval.text = voilent
         Helpdetail.text = detail
         Helplacation.text = location
-
+        check_tambon.text = notic_tambon
 //        lat_location.setText(lat)
 //        long_location.setText(long)
 
@@ -103,6 +105,21 @@ class CheckActivity : AppCompatActivity() {
         }
     }
     private fun onSuccessSubscride(response:ResponseUpdatenoti) {
+        val user_id = intent.getStringExtra("user_id")
+        val notic_id = intent.getStringExtra("notic_id")
+        mnotiPersenter.CheckNotiRx(
+            user_id,
+            planets_spinner.selectedItem.toString(),
+            "ผู้ใช้ทั่วไป",
+            {
+                Toast.makeText(this, "บันทึกข้อมูลเรียบร้อย", Toast.LENGTH_SHORT).show()
+            },
+            {
+
+            }
+        )
+        val i = Intent(this,MainActivity::class.java)
+        startActivity(i)
         finish()
     }
     private fun onErrorSubscribe(message:String){

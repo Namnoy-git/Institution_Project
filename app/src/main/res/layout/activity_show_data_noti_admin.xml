@@ -35,22 +35,32 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="2dp"
                 android:fontFamily="@font/mitr_semibold"
                 android:text="การเเจ้งเหตุ"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp" />
 
-            <TextView
+            <ImageView
                 android:id="@+id/Tv_location"
+                android:layout_width="53dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="120dp"
+                android:background="@drawable/map"
+                android:fontFamily="@font/mitr_semibold" />
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/mitr_semibold"
-                android:layout_marginLeft="160dp"
-                android:text="ดูเเผนที่"
+                android:layout_marginLeft="2dp"
+                android:text="่ทั้งหมด"
                 android:textColor="#FFFFFF"
-                android:textSize="24sp" />
+                android:textSize="20dp" />
+
+
 
 
         </LinearLayout>

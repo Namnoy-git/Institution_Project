@@ -26,9 +26,9 @@ class NotificationsFragment : Fragment() {
     var mHelpPersenter = PresenterMain()
     var mResponsenoti = ArrayList<DataList>()
 
-    lateinit var helpadapter: AdapterHelp
+    lateinit var helpadapter: AdapterDataNoti
     lateinit var pref: SharedPreferences
-    var insDis = ""
+    var tambon = ""
     var insLoca = ""
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,8 +38,8 @@ class NotificationsFragment : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_notifications, container, false)
         pref = context?.getSharedPreferences(Preferrences.FILENAME, Context.MODE_PRIVATE)!!
-        insDis = pref.getString("ins_district", "") ?: ""
-        insLoca = pref.getString("ins_locality", "") ?: ""
+
+        tambon = pref.getString("ins_locality", "") ?: ""
         return view
     }
 
@@ -53,15 +53,20 @@ class NotificationsFragment : Fragment() {
 
     private fun setadapter(view: View) {
         helpadapter =
-            AdapterHelp(requireContext(), mResponsenoti) { notic_id, notic_topic, notic_detail,
-                                                           notic_type, notic_voilent, notic_amphur, notic_status, notic_steps, notic_lat, notic_long, notic_time ->
+            AdapterDataNoti(
+                requireContext(),
+                mResponsenoti
+            ) { notic_id, user_id, notic_topic, notic_detail,
+                notic_type, notic_voilent, notic_amphur,notic_tambon, notic_status, notic_steps, notic_lat, notic_long, notic_time ->
                 val i = Intent(context, HelpActivity::class.java)
                 i.putExtra("notic_id", notic_id)
+                i.putExtra("user_id", user_id)
                 i.putExtra("notic_topic", notic_topic)
                 i.putExtra("notic_detail", notic_detail)
                 i.putExtra("notic_type", notic_type)
                 i.putExtra("notic_voilent", notic_voilent)
                 i.putExtra("notic_location", notic_amphur)
+                i.putExtra("notic_tambon", notic_tambon)
                 i.putExtra("notic_status", notic_status)
                 i.putExtra("notic_steps", notic_steps)
                 i.putExtra("notic_lat", notic_lat)
@@ -82,8 +87,7 @@ class NotificationsFragment : Fragment() {
         val status = "รับเรื่องและกำลังดำเนินการ"
         mHelpPersenter.GetDataNotiRx(
             status,
-//            insDis,
-//            insLoca,
+            tambon,
             this::onSuccessSub,
             this::onErrorSub
         )

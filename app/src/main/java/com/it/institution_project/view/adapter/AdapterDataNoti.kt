@@ -28,7 +28,7 @@ class AdapterDataNoti(
 //    private var profileuser : ArrayList<ResponseProfileBody>,
 //    private var seeuser : ArrayList<ResponseProfileBody>,
 //    private var mData : ArrayList<DeleteData>,
-    private var mInvork: (String,String, String, String, String, String, String, String, String, String, String,String) -> (Unit)
+    private var mInvork: (String,String,String, String, String, String, String, String, String, String, String, String,String) -> (Unit)
 
 ) : RecyclerView.Adapter<AdapterDataNoti.ViewHolder>() {
 
@@ -68,6 +68,7 @@ class AdapterDataNoti(
 //        val bitmap = BitmapFactory.decodeFile(flie.absolutePath)
 //        holder.imagDetail.setImageBitmap(bitmap)
         holder.nameuser.text = notiData[position].username
+        holder.phone.text = notiData[position].phone
         holder.topic.text = notiData[position].notic_topic
          holder.level.text = notiData[position].notic_voilent
         holder.status.text = notiData[position].notic_status
@@ -77,6 +78,7 @@ class AdapterDataNoti(
         holder.itemView.setOnClickListener {
             mInvork.invoke(
                 notiData[position].notic_id.toString(),
+                notiData[position].user_id,
                 notiData[position].notic_topic,
                 notiData[position].notic_detail,
                 notiData[position].notic_type,
@@ -124,7 +126,7 @@ class AdapterDataNoti(
         val level : TextView = itemsView.findViewById<TextView>(R.id.TV_Level)
         val nameuser : TextView = itemsView.findViewById<TextView>(R.id.TV_nameUser)
         val userimg : ImageView = itemsView.findViewById(R.id.ImViewProfileUser)
-
+        val phone: TextView = itemsView.findViewById<TextView>(R.id.TV_phone)
 
     }
 

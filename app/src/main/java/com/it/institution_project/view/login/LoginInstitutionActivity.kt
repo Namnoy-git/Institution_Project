@@ -3,6 +3,7 @@ package com.it.institution_project.view.login
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.it.institution_project.view.main.MainActivity
 import com.it.institution_project.R
 import com.it.institution_project.rest.local.Preferrences
@@ -65,7 +66,8 @@ class LoginInstitutionActivity : AppCompatActivity() {
 
         mPreferrences.saveToken(responseLogin.message.token)
         mPreferrences.saveUserId(responseLogin.message.ins_id.toString())
-
+        mPreferrences.saveLocality(responseLogin.message.ins_locality)
+//        Toast.makeText(applicationContext, mPreferrences.getInsLocality(), Toast.LENGTH_SHORT).show()
 
 
 

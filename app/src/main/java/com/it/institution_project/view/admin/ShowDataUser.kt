@@ -1,5 +1,6 @@
 package com.it.institution_project.view.admin
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -24,9 +25,11 @@ class ShowDataUser : AppCompatActivity() {
         setadapter()
         setapi()
 
-            btn_back_Manage2Admin.setOnClickListener {
-                finish()
-            }
+        btn_back_Manage2Admin.setOnClickListener {
+            val i = Intent(this, ManageUserActivity::class.java)
+            startActivity(i)
+            finish()
+        }
     }
 
     private fun setadapter() {
